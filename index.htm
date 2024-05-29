@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookmark</title>
+  <link rel="icon" href="bookmark.png">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&family=Bree+Serif&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/all.min.css">
+
+</head>
+
+<body>
+  <main class="main-page position-relative">
+
+    <div class="container py-5 d-flex justify-content-center align-items-center flex-column ">
+
+      <h1>Bookmarker</h1>
+      <div class="Bookmark w-100 p-3 py-4 mt-5 d-flex flex-column justify-content-center align-items-center  gap-4">
+        <h2><i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i class="fa-solid fa-bookmark"></i></h2>
+
+
+        <div class="site-name w-100 d-flex flex-column justify-content-center">
+          <label for="bookmarkName" class="pb-2 fw-semibold">
+            <i class="fa-solid fa-book-bookmark pe-2"></i>
+            Site Name</label>
+          <input oninput="validationName()" type="text" placeholder="Bookmark Name" class="form-control"
+            id="bookmarkName">
+            <p class="text-danger alert alert-danger d-none" id="invalidName">invalid Site Name </p>
+        </div>
+        <div class="site-URL w-100 d-flex flex-column justify-content-center">
+          <label for="bookmarkUrl" class="pb-2 fw-semibold">
+            <i class="fa-solid fa-link pe-2"></i>
+            Site URL</label>
+          <input oninput="validationUrl()" type=" URL" placeholder=" Website URL" class="form-control" id="bookmarkUrl">
+          <p class="text-danger alert alert-danger d-none" id="invalidUrl">invalid URL</p>
+        </div>
+        <button onclick="siteSubmit()" type="button" class="btn btn-Submit px-5"
+          id="submitBtn">Submit</button>
+        <button onclick="updateBookmark()" type="button" class="btn btn-Update btn px-5 d-none"
+          id="updateBtn">Update</button>
+      </div>
+      <input id="searchInput" oninput="SearchItem()"  type="search" class="form-control w-50 mx-auto mt-3"
+        placeholder="Search By Website Name...">
+
+      <table class="table mt-4 text-center bg-light">
+        <thead>
+          <tr>
+            <th class="text-capitalize">index</th>
+            <th class="text-capitalize">Website Name</th>
+            <th class="text-capitalize">Visit</th>
+            <th class="text-capitalize">Update</th>
+            <th class="text-capitalize">Delete</th>
+          </tr>
+        </thead>
+
+        <tbody id="demo">
+
+        </tbody>
+      </table>
+
+    </div>
+
+
+
+
+  </main>
+
+  <div onclick=" closeModal()" id="modal"
+    class="box-info position-fixed start-0 top-0 w-100 h-100 d-flex justify-content-center align-items-center bg-black bg-opacity-50 d-none">
+    <div id="play" class="modal-content bg-white  shadow-lg rounded-2 p-4">
+      <div class="modal-header d-flex justify-content-between my-4 ">
+        <p class="modal-title fs-5" id="exampleModalLabel"><i class="fa-solid fa-circle mx-1 text-danger"></i><i
+            class="fa-solid fa-circle mx-1 text-warning"></i><i class="fa-solid fa-circle mx-1  text-success"></i></p>
+        <button onclick=" closeModal()" type="button" class="btn-close fw-bold fs-4 text-black" data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3 class="mb-4 fw-lighter ">Site Name or Url is not valid, Please follow the rules below :</h3>
+        <h5 class="fw-light m-2 my-3 py-2"><i class="fa-regular fa-circle-right text-danger mx-2"></i>Site name must
+          contain at least 3 characters</h5 class="fw-semibold">
+        <h5 class="fw-lighter m-2 my-3 "><i class="fa-regular fa-circle-right text-danger mx-2"></i>Site URL must be a
+          valid one</h5>
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <script src="js/main.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
